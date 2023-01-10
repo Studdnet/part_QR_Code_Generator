@@ -17,6 +17,7 @@ body {
 
 .wrapper {
 	background: #fff;
+	height: 260px;
 	max-width: 410px;
 	border-radius: 7px;
 	padding: 16px 25px;
@@ -49,5 +50,22 @@ header p {
 	font-size: 18px;
 	padding: 0 17px;
 	border: 1px solid #999;
+}
 
+.form button {
+	cursor: pointer;
+	font-size: 16px;
+	color: #fff;
+	margin-top: 20px;
+	background: #3498DB; 
+}
+
+.wrapper .qr-code {
+	opacity: 0;
+	pointer-events: none;
+	border: 1px solid #ccc;
+	padding: 33px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
