@@ -12,15 +12,17 @@ generateBtn.addEventListener("click", () => {
 	// api and passing the api returned img src to qrImg
 	qrImg.src = ` https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=${qrValue}`;
 	qrImg.addEventListener("load", () => {
-		wrapper.classList.add("active");
-		generateBtn.innerText = "Generate QR Code";
+		setTimeout(() => {
+			wrapper.classList.add("active");
+			generateBtn.innerText = "Generate QR Code";
+		}, 1000);
 	});
-	wrapper.classList.add("active");
+	// wrapper.classList.add("active");
 
-	setTimeout(()=>{
+	setTimeout(() => {
 		qrInput.value = "";
 		wrapper.classList.remove("active");
-	}, 3000); 
+	}, 6000);
 });
 
 qrInput.addEventListener("keyup", () => {
