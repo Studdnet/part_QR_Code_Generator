@@ -22,10 +22,11 @@ body {
 	border-radius: 7px;
 	padding: 16px 25px;
 	transition: height 0.2s ease;
+	overflow: hidden;
 }
 
 .wrapper.active {
-	height: 530px;
+	height: 550px;
 }
 
 header h1{
@@ -39,8 +40,25 @@ header p {
 	font-size: 16px;
 }
 
+.wrapper .countdown {
+	margin-top: 15px;
+	color: #474747;
+	font-size: 16px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.wrapper .countdown.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.wrapper .countdown span {
+	color: red;
+}
+
 .wrapper .form 	{
-	margin: 20px 0 25px;
+	margin: 20px 0 20px;
 }
 
 .form :where(input, button) {

@@ -1,5 +1,7 @@
 "use strict";
 const wrapper = document.querySelector(".wrapper"),
+	countdown = document.querySelector(".countdown"),
+	timerSet = document.querySelector(".countdown span"),
 	qrInput = document.querySelector(".form input"),
 	generateBtn = document.querySelector(".form button"),
 	qrImg = document.querySelector(".qr-code img");
@@ -14,16 +16,28 @@ generateBtn.addEventListener("click", () => {
 	qrImg.addEventListener("load", () => {
 		setTimeout(() => {
 			wrapper.classList.add("active");
-			generateBtn.innerText = "Generate QR Code";
+			countdown.classList.add("active");
+			generateBtn.innerText = "This is your code";
 		}, 1000);
 	});
-	// wrapper.classList.add("active");
 
 	setTimeout(() => {
 		qrInput.value = "";
+		generateBtn.innerText = "Generate QR Code";
 		wrapper.classList.remove("active");
+		countdown.classList.remove("active");
 	}, 6000);
+
+	let timer = timerSet.dataset.timer;
+
+	const initCounter = setInterval(() => {
+		if (timer > 0) {
+			timer--;
+			return timerSet.innerHTML = `${timer}`;
+		}
+	}, 1000);
 });
+
 
 qrInput.addEventListener("keyup", () => {
 	if (!qrInput.value) {
