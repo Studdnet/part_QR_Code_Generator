@@ -8,6 +8,7 @@ const wrapper = document.querySelector(".wrapper"),
 
 generateBtn.addEventListener("click", () => {
 	let qrValue = qrInput.value;
+	let timer = +(timerSet.dataset.timer);
 	if (!qrValue) return; //if the input is empty then return form here
 	generateBtn.innerText = "Generating QR Code ...";
 	//getting a QR code of user entered value using the qrserver
@@ -26,9 +27,7 @@ generateBtn.addEventListener("click", () => {
 		generateBtn.innerText = "Generate QR Code";
 		wrapper.classList.remove("active");
 		countdown.classList.remove("active");
-	}, 6000);
-
-	let timer = timerSet.dataset.timer;
+	}, timer * 1000);
 
 	const initCounter = setInterval(() => {
 		if (timer > 0) {
